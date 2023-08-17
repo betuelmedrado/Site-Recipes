@@ -6,6 +6,8 @@ __pycache__
 db.sqlite3
 media
 
+comandos.txt
+
 # Backup files #
 *.bak
 
@@ -128,4 +130,3 @@ gunicorn-error-log
 db.sqlite3
 db copy.sqlite3
 static/
-

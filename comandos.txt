@@ -1,0 +1,20 @@
+Create envaroments
+	python -m venv name-ambiente
+
+Activate envaroments
+	name-ambiente\Scripts\activate
+
+Install django 
+
+
+######## Configurando Git Hub #########
+	>git config --global user.name "Betuel Medrado Araujo"
+	>git config --global user.email "betobmx360@gmail.com"
+	>git config --global init.defaultBranch main
+	>git init
+	
+	# Pegando o link pelo ssh fazer todo o processo de copiar o ssh-keygen no nosso pc e coloar no git hub
+	>ssh-keygen
+	
+	# Depois copia a chave ssh no git hub e faz esse comando no terminal
+	>git remote add origin git@github.com:betuelmedrado/Curso-django-projeto1.git
