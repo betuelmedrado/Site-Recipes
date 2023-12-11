@@ -1,0 +1,57 @@
+body{
+    
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    max-width: 100%;
+      
+}
+
+
+/* forms author do register_view */
+
+.form-content{
+    max-width: 64rem;
+    margin:0 auto;
+    margin-bottom: 3rem;
+}
+
+.form-content label, .form-content .help-text, .errorlist{
+    display:block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    list-style-type: none;
+}
+
+.errorlist{
+    color: red;
+}
+
+.form-content input{
+    width: 100%;
+    padding: 1rem;
+    border-radius: .4rem;
+    border: 1px solid darkcyan;
+
+}
+
+.form-content-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+
+}
+
+.form-content button{
+    padding: 1rem 2rem;
+    background-color: gray;
+    color: white;
+}
+
+@media (max-width: 600px){
+    .form-content {grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));}
+}
+

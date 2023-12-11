@@ -1,0 +1,44 @@
+
+{% extends 'blogal/base.html' %}
+
+{% block title %} Register {% endblock %}
+
+
+{% block main %}
+
+    <div class="center">        
+        <h2>Register  {{request.session.namber}}</h2>
+    </div>
+
+    <div class="center">
+
+        <form action="{% url 'authors:author' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-content form-content-grid">
+                {% for field in forms%}
+                    <div class="form-group">
+                        <label for="{{field.id_for_label}}">{{field.label}}</label>
+                        {{field}} 
+                        {% if field.help_text %}     
+                            <p class="help-text">{{field.help_text}}</p>
+                        {% endif %}
+
+                        {{field.errors}}
+
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-content form-content-grid">
+                <div class="from-group">                
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+                    
+            <h2>{{save}}</h2>
+            
+
+        </form>
+    </div>
+
+{% endblock %}

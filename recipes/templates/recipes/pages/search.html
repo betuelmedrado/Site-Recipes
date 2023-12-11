@@ -1,0 +1,23 @@
+
+
+{% extends 'blogal/base.html' %}
+{% load static %}
+
+{% block main %}
+    
+    <div class="main-content container main-content-detail">
+        
+        {% for recipe in recipes %}        
+
+            {% include 'recipes/partial/recipes.html' %}
+
+        {% empty%}
+            <div class="container">
+                <h1>No Recipes found here! 😒 </h1>
+                {{recipe}}
+                <h6>"windonw + . " para emoji </h6>
+            </div>
+        {% endfor %}        
+    </div>
+    
+{% endblock %}

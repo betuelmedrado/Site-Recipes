@@ -1,0 +1,26 @@
+{% extends 'blogal/base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}        
+    {% if messages %}
+        <div class="messages-cotainer">    
+            {% for message in messages %}
+                <div class=" {{ message.tags }}"> 
+                    {{message}}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="main-content main-content-list container">          
+        {% for recipe in recipes %}                                     
+            {% include 'recipes/partial/recipes.html' %} 
+        {% empty %}
+            <h1> Not Recipes in Here ;( </h1>
+        {% endfor %}        
+    </div>    
+
+{% endblock %}
