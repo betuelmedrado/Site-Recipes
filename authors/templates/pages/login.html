@@ -1,0 +1,33 @@
+
+
+{% extends 'blogal/base.html' %}
+
+{% block title %} Register {% endblock %}
+
+
+{% block main %}
+
+    <div class="center">        
+        <h2>Login  {{request.session.namber}}</h2>          
+    </div>
+
+    {% if request.user.is_authenticated %}
+        <div class="center">
+            <form action="{% url 'authors:logout' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="input_name" value="{{request.user.username}}">
+                You are logged in as {{request.user.username}} <button type="submit"> click here </button > to logout!
+            </form>
+        </div>        
+        
+    {% endif %}
+     
+    {% for message in messages %}
+        <div class="message-cotainer {{message.tags}}">
+            {{message}}
+        </div>
+    {% endfor %}
+    
+    {% include 'blogal/forms.html' %}
+       
+{% endblock %}

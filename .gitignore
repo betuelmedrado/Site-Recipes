@@ -6,6 +6,7 @@ __pycache__
 db.sqlite3
 media
 0-Curso-HTML-CSS
+test_of_known
 
 # Backup files #
 *.bak

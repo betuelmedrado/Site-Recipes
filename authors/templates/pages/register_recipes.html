@@ -1,0 +1,29 @@
+
+{% extends 'blogal/base.html' %}
+
+{% block title %} Register Recipes {% endblock %}
+
+
+{% block main %} 
+
+    <div class="center">
+        <p><h1>{{ request.user}}</h1></p>
+        <a href="{% url 'authors:dashboard' %}"><h2> See your recipes </h2></a>
+    </div>
+
+    {% for message in messages %}
+        {{message.tags}}
+        <div class="message-cotainer {{message.tags}}">
+        {{message}}
+        </div>
+    {% endfor %}
+
+    <div class=" center ">        
+        <div>
+            {% include 'blogal/forms.html' %}
+        </div>
+
+    </div>
+
+{% endblock %}
+

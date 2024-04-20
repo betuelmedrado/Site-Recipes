@@ -1,0 +1,52 @@
+
+{% extends 'blogal/base.html' %}
+
+{% block title %} <h2>Dashboard ({{user}})</h2> {% endblock %}
+
+
+{% block main %}
+
+    <div class="center">        
+        <h2>Dashboard ({{user}})</h2>
+    </div>
+    
+    {% if request.user.is_authenticated %}
+        <div class="center">
+            <form action="{% url 'authors:logout' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="input_name" value="{{request.user.username}}">
+                You are logged in as {{request.user.username}} <button type="submit"> click here </button > to logout!
+            </form>
+        </div>                
+    {% endif %}
+
+    {% for message in messages %}
+        <div class="message-cotainer {{message.tags}}">
+            {{message}}
+        </div>
+    {% endfor %}
+
+    <div class="author-dashboard-cotainer">
+        <h3> Your recipes</h3>
+
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <a href="{% url 'authors:dashboard_edit' recipe.id %}">{{recipe}}</a>
+                </li>
+
+            {% empty %}
+
+                <li>
+                    You do not recipes create one! 
+                </li>
+
+            {% endfor%}
+
+        </ul>
+
+    </div>
+    
+    
+
+{% endblock %}
